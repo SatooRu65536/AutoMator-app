@@ -31,3 +31,7 @@ FinderからVSCodeを開きます
 Finer からターミナルで開きたい項目を選択し、  
 右クリック > クイックアクション > openVSCode  
 または、割り当てたショートカットキーを押す
+
+
+## ライセンス
+[MIT License](./LICENSE)
