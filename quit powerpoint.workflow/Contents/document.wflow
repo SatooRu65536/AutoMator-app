@@ -20,6 +20,117 @@
 					<key>Optional</key>
 					<true/>
 					<key>Types</key>
+					<array/>
+				</dict>
+				<key>AMActionVersion</key>
+				<string>2.0.2</string>
+				<key>AMApplication</key>
+				<array>
+					<string>Automator</string>
+				</array>
+				<key>AMParameterProperties</key>
+				<dict>
+					<key>pauseDuration</key>
+					<dict/>
+					<key>pauseUnit</key>
+					<dict/>
+				</dict>
+				<key>AMProvides</key>
+				<dict>
+					<key>Container</key>
+					<string>List</string>
+					<key>Types</key>
+					<array/>
+				</dict>
+				<key>ActionBundlePath</key>
+				<string>/System/Library/Automator/Pause.action</string>
+				<key>ActionName</key>
+				<string>一時停止</string>
+				<key>ActionParameters</key>
+				<dict>
+					<key>pauseDuration</key>
+					<integer>1</integer>
+					<key>pauseUnit</key>
+					<integer>0</integer>
+				</dict>
+				<key>BundleIdentifier</key>
+				<string>com.apple.Automator.Pause</string>
+				<key>CFBundleVersion</key>
+				<string>2.0.2</string>
+				<key>CanShowSelectedItemsWhenRun</key>
+				<true/>
+				<key>CanShowWhenRun</key>
+				<false/>
+				<key>Category</key>
+				<array>
+					<string>AMCategoryUtilities</string>
+				</array>
+				<key>Class Name</key>
+				<string>PauseAction</string>
+				<key>InputUUID</key>
+				<string>406262C6-9D9F-4EE3-B224-73E2407D5CBC</string>
+				<key>Keywords</key>
+				<array>
+					<string>時間</string>
+					<string>待機</string>
+				</array>
+				<key>OutputUUID</key>
+				<string>6CB3EAA6-E588-4830-8393-A5E39CD37CDD</string>
+				<key>UUID</key>
+				<string>F85710E2-F584-413E-9029-E8818135810C</string>
+				<key>UnlocalizedApplications</key>
+				<array>
+					<string>Automator</string>
+				</array>
+				<key>arguments</key>
+				<dict>
+					<key>0</key>
+					<dict>
+						<key>default value</key>
+						<integer>0</integer>
+						<key>name</key>
+						<string>pauseDuration</string>
+						<key>required</key>
+						<string>0</string>
+						<key>type</key>
+						<string>0</string>
+						<key>uuid</key>
+						<string>0</string>
+					</dict>
+					<key>1</key>
+					<dict>
+						<key>default value</key>
+						<integer>0</integer>
+						<key>name</key>
+						<string>pauseUnit</string>
+						<key>required</key>
+						<string>0</string>
+						<key>type</key>
+						<string>0</string>
+						<key>uuid</key>
+						<string>1</string>
+					</dict>
+				</dict>
+				<key>isViewVisible</key>
+				<integer>1</integer>
+				<key>location</key>
+				<string>366.500000:225.000000</string>
+				<key>nibPath</key>
+				<string>/System/Library/Automator/Pause.action/Contents/Resources/Base.lproj/main.nib</string>
+			</dict>
+			<key>isViewVisible</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>action</key>
+			<dict>
+				<key>AMAccepts</key>
+				<dict>
+					<key>Container</key>
+					<string>List</string>
+					<key>Optional</key>
+					<true/>
+					<key>Types</key>
 					<array>
 						<string>com.apple.cocoa.string</string>
 					</array>
@@ -59,26 +170,11 @@
 				<key>ActionParameters</key>
 				<dict>
 					<key>COMMAND_STRING</key>
-					<string>#!/bin/zsh
-
-# 引数が存在するかチェック
-if [ $# -eq 0 ]; then
-#  exit 1
-fi
-
-# 指定されたパス
-path=$1
-
-# パスがフォルダかファイルかを判断
-if [ -d "$path" ]; then
-  /usr/bin/open "$path" -a terminal
-elif [ -f "$path" ]; then
-  /usr/bin/open "$(/usr/bin/dirname "$path")" -a terminal
-fi</string>
+					<string>/usr/bin/killall "Microsoft PowerPoint"</string>
 					<key>CheckedForUserDefaultShell</key>
 					<true/>
 					<key>inputMethod</key>
-					<integer>1</integer>
+					<integer>0</integer>
 					<key>shell</key>
 					<string>/bin/zsh</string>
 					<key>source</key>
@@ -99,7 +195,7 @@ fi</string>
 				<key>Class Name</key>
 				<string>RunShellScriptAction</string>
 				<key>InputUUID</key>
-				<string>5E505934-7CB4-4D25-896F-AD83C6CB708B</string>
+				<string>1C77DFF8-CCCD-4581-B829-6580AB286036</string>
 				<key>Keywords</key>
 				<array>
 					<string>シェル</string>
@@ -109,9 +205,9 @@ fi</string>
 					<string>UNIX</string>
 				</array>
 				<key>OutputUUID</key>
-				<string>AF4A939F-509E-42CD-A82E-8EEBA45CA015</string>
+				<string>92C86580-8E49-40F9-BE86-4EE2339B354F</string>
 				<key>UUID</key>
-				<string>A0AB89F8-6D8E-4E6D-9BB2-2CFCF638A004</string>
+				<string>CFA49AEA-77FD-49F6-8707-B7A70568C096</string>
 				<key>UnlocalizedApplications</key>
 				<array>
 					<string>Automator</string>
@@ -187,7 +283,7 @@ fi</string>
 				<key>isViewVisible</key>
 				<integer>1</integer>
 				<key>location</key>
-				<string>366.500000:634.000000</string>
+				<string>366.500000:407.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Run Shell Script.action/Contents/Resources/Base.lproj/main.nib</string>
 			</dict>
@@ -196,42 +292,37 @@ fi</string>
 		</dict>
 	</array>
 	<key>connectors</key>
-	<dict/>
+	<dict>
+		<key>DAF911EE-B01B-475F-89EC-7EFD6BEF7662</key>
+		<dict>
+			<key>from</key>
+			<string>F85710E2-F584-413E-9029-E8818135810C - F85710E2-F584-413E-9029-E8818135810C</string>
+			<key>to</key>
+			<string>CFA49AEA-77FD-49F6-8707-B7A70568C096 - CFA49AEA-77FD-49F6-8707-B7A70568C096</string>
+		</dict>
+	</dict>
 	<key>workflowMetaData</key>
 	<dict>
-		<key>applicationBundleID</key>
-		<string>com.apple.finder</string>
 		<key>applicationBundleIDsByPath</key>
-		<dict>
-			<key>/System/Library/CoreServices/Finder.app</key>
-			<string>com.apple.finder</string>
-		</dict>
-		<key>applicationPath</key>
-		<string>/System/Library/CoreServices/Finder.app</string>
+		<dict/>
 		<key>applicationPaths</key>
-		<array>
-			<string>/System/Library/CoreServices/Finder.app</string>
-		</array>
+		<array/>
 		<key>inputTypeIdentifier</key>
-		<string>com.apple.Automator.fileSystemObject</string>
+		<string>com.apple.Automator.nothing</string>
 		<key>outputTypeIdentifier</key>
 		<string>com.apple.Automator.nothing</string>
 		<key>presentationMode</key>
-		<integer>15</integer>
+		<integer>11</integer>
 		<key>processesInput</key>
 		<integer>0</integer>
-		<key>serviceApplicationBundleID</key>
-		<string>com.apple.finder</string>
-		<key>serviceApplicationPath</key>
-		<string>/System/Library/CoreServices/Finder.app</string>
 		<key>serviceInputTypeIdentifier</key>
-		<string>com.apple.Automator.fileSystemObject</string>
+		<string>com.apple.Automator.nothing</string>
 		<key>serviceOutputTypeIdentifier</key>
 		<string>com.apple.Automator.nothing</string>
 		<key>serviceProcessesInput</key>
 		<integer>0</integer>
 		<key>systemImageName</key>
-		<string>NSTouchBarDocuments</string>
+		<string>NSTouchBarClose</string>
 		<key>useAutomaticInputType</key>
 		<integer>0</integer>
 		<key>workflowTypeIdentifier</key>

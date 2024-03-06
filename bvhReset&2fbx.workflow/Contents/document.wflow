@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>AMApplicationBuild</key>
-	<string>521.1</string>
+	<string>523</string>
 	<key>AMApplicationVersion</key>
 	<string>2.10</string>
 	<key>AMDocumentVersion</key>
@@ -59,28 +59,17 @@
 				<key>ActionParameters</key>
 				<dict>
 					<key>COMMAND_STRING</key>
-					<string>#!/bin/zsh
-
-# 引数が存在するかチェック
-if [ $# -eq 0 ]; then
-#  exit 1
-fi
-
-# 指定されたパス
-path=$1
-
-# パスがフォルダかファイルかを判断
-if [ -d "$path" ]; then
-  /usr/bin/open "$path" -a terminal
-elif [ -f "$path" ]; then
-  /usr/bin/open "$(/usr/bin/dirname "$path")" -a terminal
-fi</string>
+					<string>for file in "$@"; do
+  if [[ "$file" == *.bvh || "$file" == *.BVH ]]; then
+    /Users/satooru/.pyenv/shims/python3 /Users/satooru/FolderAction/bvh2fbx/.script/reset_position_and_rotation.py -- "$file"
+  fi
+done</string>
 					<key>CheckedForUserDefaultShell</key>
 					<true/>
 					<key>inputMethod</key>
 					<integer>1</integer>
 					<key>shell</key>
-					<string>/bin/zsh</string>
+					<string>/bin/bash</string>
 					<key>source</key>
 					<string></string>
 				</dict>
@@ -99,7 +88,7 @@ fi</string>
 				<key>Class Name</key>
 				<string>RunShellScriptAction</string>
 				<key>InputUUID</key>
-				<string>5E505934-7CB4-4D25-896F-AD83C6CB708B</string>
+				<string>87AC4E18-25A3-4D8B-A6DE-EF12A4CD537D</string>
 				<key>Keywords</key>
 				<array>
 					<string>シェル</string>
@@ -109,9 +98,9 @@ fi</string>
 					<string>UNIX</string>
 				</array>
 				<key>OutputUUID</key>
-				<string>AF4A939F-509E-42CD-A82E-8EEBA45CA015</string>
+				<string>FFBBCC5D-9CC4-41F0-A946-1088CF06B848</string>
 				<key>UUID</key>
-				<string>A0AB89F8-6D8E-4E6D-9BB2-2CFCF638A004</string>
+				<string>2D372D0C-104B-48B4-8FF1-98CA27D77562</string>
 				<key>UnlocalizedApplications</key>
 				<array>
 					<string>Automator</string>
@@ -187,7 +176,178 @@ fi</string>
 				<key>isViewVisible</key>
 				<integer>1</integer>
 				<key>location</key>
-				<string>366.500000:634.000000</string>
+				<string>553.000000:322.000000</string>
+				<key>nibPath</key>
+				<string>/System/Library/Automator/Run Shell Script.action/Contents/Resources/Base.lproj/main.nib</string>
+			</dict>
+			<key>isViewVisible</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>action</key>
+			<dict>
+				<key>AMAccepts</key>
+				<dict>
+					<key>Container</key>
+					<string>List</string>
+					<key>Optional</key>
+					<true/>
+					<key>Types</key>
+					<array>
+						<string>com.apple.cocoa.string</string>
+					</array>
+				</dict>
+				<key>AMActionVersion</key>
+				<string>2.0.3</string>
+				<key>AMApplication</key>
+				<array>
+					<string>Automator</string>
+				</array>
+				<key>AMParameterProperties</key>
+				<dict>
+					<key>COMMAND_STRING</key>
+					<dict/>
+					<key>CheckedForUserDefaultShell</key>
+					<dict/>
+					<key>inputMethod</key>
+					<dict/>
+					<key>shell</key>
+					<dict/>
+					<key>source</key>
+					<dict/>
+				</dict>
+				<key>AMProvides</key>
+				<dict>
+					<key>Container</key>
+					<string>List</string>
+					<key>Types</key>
+					<array>
+						<string>com.apple.cocoa.string</string>
+					</array>
+				</dict>
+				<key>ActionBundlePath</key>
+				<string>/System/Library/Automator/Run Shell Script.action</string>
+				<key>ActionName</key>
+				<string>シェルスクリプトを実行</string>
+				<key>ActionParameters</key>
+				<dict>
+					<key>COMMAND_STRING</key>
+					<string>for file in "$@"; do
+  /Applications/Blender.app/Contents/MacOS/Blender -b -P /Users/satooru/FolderAction/bvh2fbx/.script/mocopi_bvh_fbx_converter.py -- "$file"
+done</string>
+					<key>CheckedForUserDefaultShell</key>
+					<true/>
+					<key>inputMethod</key>
+					<integer>1</integer>
+					<key>shell</key>
+					<string>/bin/bash</string>
+					<key>source</key>
+					<string></string>
+				</dict>
+				<key>BundleIdentifier</key>
+				<string>com.apple.RunShellScript</string>
+				<key>CFBundleVersion</key>
+				<string>2.0.3</string>
+				<key>CanShowSelectedItemsWhenRun</key>
+				<false/>
+				<key>CanShowWhenRun</key>
+				<true/>
+				<key>Category</key>
+				<array>
+					<string>AMCategoryUtilities</string>
+				</array>
+				<key>Class Name</key>
+				<string>RunShellScriptAction</string>
+				<key>InputUUID</key>
+				<string>F8B9A7DD-0408-4527-B0D1-E17A7E4A4C41</string>
+				<key>Keywords</key>
+				<array>
+					<string>シェル</string>
+					<string>スクリプト</string>
+					<string>コマンド</string>
+					<string>実行</string>
+					<string>UNIX</string>
+				</array>
+				<key>OutputUUID</key>
+				<string>230836D0-0E94-41E9-A15C-694257A0462E</string>
+				<key>UUID</key>
+				<string>1A11A71F-A91E-4BC2-B8A7-B41BCA3B0742</string>
+				<key>UnlocalizedApplications</key>
+				<array>
+					<string>Automator</string>
+				</array>
+				<key>arguments</key>
+				<dict>
+					<key>0</key>
+					<dict>
+						<key>default value</key>
+						<integer>0</integer>
+						<key>name</key>
+						<string>inputMethod</string>
+						<key>required</key>
+						<string>0</string>
+						<key>type</key>
+						<string>0</string>
+						<key>uuid</key>
+						<string>0</string>
+					</dict>
+					<key>1</key>
+					<dict>
+						<key>default value</key>
+						<false/>
+						<key>name</key>
+						<string>CheckedForUserDefaultShell</string>
+						<key>required</key>
+						<string>0</string>
+						<key>type</key>
+						<string>0</string>
+						<key>uuid</key>
+						<string>1</string>
+					</dict>
+					<key>2</key>
+					<dict>
+						<key>default value</key>
+						<string></string>
+						<key>name</key>
+						<string>source</string>
+						<key>required</key>
+						<string>0</string>
+						<key>type</key>
+						<string>0</string>
+						<key>uuid</key>
+						<string>2</string>
+					</dict>
+					<key>3</key>
+					<dict>
+						<key>default value</key>
+						<string></string>
+						<key>name</key>
+						<string>COMMAND_STRING</string>
+						<key>required</key>
+						<string>0</string>
+						<key>type</key>
+						<string>0</string>
+						<key>uuid</key>
+						<string>3</string>
+					</dict>
+					<key>4</key>
+					<dict>
+						<key>default value</key>
+						<string>/bin/sh</string>
+						<key>name</key>
+						<string>shell</string>
+						<key>required</key>
+						<string>0</string>
+						<key>type</key>
+						<string>0</string>
+						<key>uuid</key>
+						<string>4</string>
+					</dict>
+				</dict>
+				<key>isViewVisible</key>
+				<integer>1</integer>
+				<key>location</key>
+				<string>553.000000:524.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Run Shell Script.action/Contents/Resources/Base.lproj/main.nib</string>
 			</dict>
@@ -196,7 +356,15 @@ fi</string>
 		</dict>
 	</array>
 	<key>connectors</key>
-	<dict/>
+	<dict>
+		<key>0C3E7560-4A71-40A9-B968-FD4FC9A7CF5F</key>
+		<dict>
+			<key>from</key>
+			<string>2D372D0C-104B-48B4-8FF1-98CA27D77562 - 2D372D0C-104B-48B4-8FF1-98CA27D77562</string>
+			<key>to</key>
+			<string>1A11A71F-A91E-4BC2-B8A7-B41BCA3B0742 - 1A11A71F-A91E-4BC2-B8A7-B41BCA3B0742</string>
+		</dict>
+	</dict>
 	<key>workflowMetaData</key>
 	<dict>
 		<key>applicationBundleID</key>
@@ -231,7 +399,7 @@ fi</string>
 		<key>serviceProcessesInput</key>
 		<integer>0</integer>
 		<key>systemImageName</key>
-		<string>NSTouchBarDocuments</string>
+		<string>NSTouchBarCheck</string>
 		<key>useAutomaticInputType</key>
 		<integer>0</integer>
 		<key>workflowTypeIdentifier</key>

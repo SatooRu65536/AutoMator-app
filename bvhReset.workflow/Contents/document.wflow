@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>AMApplicationBuild</key>
-	<string>521.1</string>
+	<string>523</string>
 	<key>AMApplicationVersion</key>
 	<string>2.10</string>
 	<key>AMDocumentVersion</key>
@@ -59,22 +59,13 @@
 				<key>ActionParameters</key>
 				<dict>
 					<key>COMMAND_STRING</key>
-					<string>#!/bin/zsh
+					<string>#!/bin/bash
 
-# 引数が存在するかチェック
-if [ $# -eq 0 ]; then
-#  exit 1
-fi
-
-# 指定されたパス
-path=$1
-
-# パスがフォルダかファイルかを判断
-if [ -d "$path" ]; then
-  /usr/bin/open "$path" -a terminal
-elif [ -f "$path" ]; then
-  /usr/bin/open "$(/usr/bin/dirname "$path")" -a terminal
-fi</string>
+for file in "$@"; do
+  if [[ "$file" == *.bvh || "$file" == *.BVH ]]; then
+    /Users/satooru/.pyenv/shims/python3 /Users/satooru/FolderAction/bvh2fbx/.script/reset_position_and_rotation.py -- "$file"
+  fi
+done</string>
 					<key>CheckedForUserDefaultShell</key>
 					<true/>
 					<key>inputMethod</key>
@@ -99,7 +90,7 @@ fi</string>
 				<key>Class Name</key>
 				<string>RunShellScriptAction</string>
 				<key>InputUUID</key>
-				<string>5E505934-7CB4-4D25-896F-AD83C6CB708B</string>
+				<string>342EC0EA-C003-41AF-8C9A-549E9F88B1AA</string>
 				<key>Keywords</key>
 				<array>
 					<string>シェル</string>
@@ -109,9 +100,9 @@ fi</string>
 					<string>UNIX</string>
 				</array>
 				<key>OutputUUID</key>
-				<string>AF4A939F-509E-42CD-A82E-8EEBA45CA015</string>
+				<string>124FD2EA-301E-49FF-ABBD-7B89518A6572</string>
 				<key>UUID</key>
-				<string>A0AB89F8-6D8E-4E6D-9BB2-2CFCF638A004</string>
+				<string>54291ED5-4729-4221-A7FF-7EEC6CA7A3A5</string>
 				<key>UnlocalizedApplications</key>
 				<array>
 					<string>Automator</string>
@@ -184,10 +175,12 @@ fi</string>
 						<string>4</string>
 					</dict>
 				</dict>
+				<key>conversionLabel</key>
+				<integer>0</integer>
 				<key>isViewVisible</key>
 				<integer>1</integer>
 				<key>location</key>
-				<string>366.500000:634.000000</string>
+				<string>480.500000:305.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Run Shell Script.action/Contents/Resources/Base.lproj/main.nib</string>
 			</dict>
@@ -231,7 +224,7 @@ fi</string>
 		<key>serviceProcessesInput</key>
 		<integer>0</integer>
 		<key>systemImageName</key>
-		<string>NSTouchBarDocuments</string>
+		<string>NSTouchBarRefresh</string>
 		<key>useAutomaticInputType</key>
 		<integer>0</integer>
 		<key>workflowTypeIdentifier</key>

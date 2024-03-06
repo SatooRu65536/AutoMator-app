@@ -3,13 +3,166 @@
 <plist version="1.0">
 <dict>
 	<key>AMApplicationBuild</key>
-	<string>521.1</string>
+	<string>523</string>
 	<key>AMApplicationVersion</key>
 	<string>2.10</string>
 	<key>AMDocumentVersion</key>
 	<string>2</string>
 	<key>actions</key>
 	<array>
+		<dict>
+			<key>action</key>
+			<dict>
+				<key>AMAccepts</key>
+				<dict>
+					<key>Container</key>
+					<string>List</string>
+					<key>Optional</key>
+					<false/>
+					<key>Types</key>
+					<array>
+						<string>public.image</string>
+					</array>
+				</dict>
+				<key>AMActionVersion</key>
+				<string>1.3.1</string>
+				<key>AMApplication</key>
+				<array>
+					<string>プレビュー</string>
+				</array>
+				<key>AMParameterProperties</key>
+				<dict>
+					<key>percentageValue</key>
+					<dict/>
+					<key>scaleMethod</key>
+					<dict/>
+					<key>scaleValue</key>
+					<dict/>
+					<key>sizeValue</key>
+					<dict/>
+				</dict>
+				<key>AMProvides</key>
+				<dict>
+					<key>Container</key>
+					<string>List</string>
+					<key>Types</key>
+					<array>
+						<string>public.image</string>
+					</array>
+				</dict>
+				<key>ActionBundlePath</key>
+				<string>/System/Library/Automator/Scale Images.action</string>
+				<key>ActionName</key>
+				<string>画像をサイズ調整</string>
+				<key>ActionParameters</key>
+				<dict>
+					<key>percentageValue</key>
+					<integer>100</integer>
+					<key>scaleMethod</key>
+					<integer>0</integer>
+					<key>scaleValue</key>
+					<integer>0</integer>
+					<key>sizeValue</key>
+					<integer>960</integer>
+				</dict>
+				<key>BundleIdentifier</key>
+				<string>com.apple.Automator.ScaleImage</string>
+				<key>CFBundleVersion</key>
+				<string>1.3.1</string>
+				<key>CanShowSelectedItemsWhenRun</key>
+				<true/>
+				<key>CanShowWhenRun</key>
+				<true/>
+				<key>Category</key>
+				<array>
+					<string>AMCategoryPhotos</string>
+				</array>
+				<key>Class Name</key>
+				<string>AMScaleImagesAction</string>
+				<key>InputUUID</key>
+				<string>39548138-1B0C-4CF1-8F0A-7222E8725897</string>
+				<key>Keywords</key>
+				<array>
+					<string>画像</string>
+					<string>写真</string>
+					<string>サイズ調整</string>
+					<string>変更</string>
+				</array>
+				<key>OutputUUID</key>
+				<string>21CE73BE-E0A7-427A-BF31-87DD65DFF1BE</string>
+				<key>UUID</key>
+				<string>07F0E58A-BBE1-4023-B99D-7C530075C958</string>
+				<key>UnlocalizedApplications</key>
+				<array>
+					<string>Preview</string>
+				</array>
+				<key>arguments</key>
+				<dict>
+					<key>0</key>
+					<dict>
+						<key>default value</key>
+						<integer>100</integer>
+						<key>name</key>
+						<string>percentageValue</string>
+						<key>required</key>
+						<string>0</string>
+						<key>type</key>
+						<string>0</string>
+						<key>uuid</key>
+						<string>0</string>
+					</dict>
+					<key>1</key>
+					<dict>
+						<key>default value</key>
+						<integer>0</integer>
+						<key>name</key>
+						<string>scaleValue</string>
+						<key>required</key>
+						<string>0</string>
+						<key>type</key>
+						<string>0</string>
+						<key>uuid</key>
+						<string>1</string>
+					</dict>
+					<key>2</key>
+					<dict>
+						<key>default value</key>
+						<integer>0</integer>
+						<key>name</key>
+						<string>scaleMethod</string>
+						<key>required</key>
+						<string>0</string>
+						<key>type</key>
+						<string>0</string>
+						<key>uuid</key>
+						<string>2</string>
+					</dict>
+					<key>3</key>
+					<dict>
+						<key>default value</key>
+						<integer>480</integer>
+						<key>name</key>
+						<string>sizeValue</string>
+						<key>required</key>
+						<string>0</string>
+						<key>type</key>
+						<string>0</string>
+						<key>uuid</key>
+						<string>3</string>
+					</dict>
+				</dict>
+				<key>conversionLabel</key>
+				<integer>0</integer>
+				<key>isViewVisible</key>
+				<integer>1</integer>
+				<key>location</key>
+				<string>563.500000:227.000000</string>
+				<key>nibPath</key>
+				<string>/System/Library/Automator/Scale Images.action/Contents/Resources/Base.lproj/main.nib</string>
+			</dict>
+			<key>isViewVisible</key>
+			<integer>1</integer>
+		</dict>
 		<dict>
 			<key>action</key>
 			<dict>
@@ -59,22 +212,9 @@
 				<key>ActionParameters</key>
 				<dict>
 					<key>COMMAND_STRING</key>
-					<string>#!/bin/zsh
-
-# 引数が存在するかチェック
-if [ $# -eq 0 ]; then
-#  exit 1
-fi
-
-# 指定されたパス
-path=$1
-
-# パスがフォルダかファイルかを判断
-if [ -d "$path" ]; then
-  /usr/bin/open "$path" -a terminal
-elif [ -f "$path" ]; then
-  /usr/bin/open "$(/usr/bin/dirname "$path")" -a terminal
-fi</string>
+					<string>for file in "$@"; do
+  /usr/local/bin/cwebp "$file" -o "$file.webp" &amp;&amp; rm -rf $file
+done</string>
 					<key>CheckedForUserDefaultShell</key>
 					<true/>
 					<key>inputMethod</key>
@@ -99,7 +239,7 @@ fi</string>
 				<key>Class Name</key>
 				<string>RunShellScriptAction</string>
 				<key>InputUUID</key>
-				<string>5E505934-7CB4-4D25-896F-AD83C6CB708B</string>
+				<string>04E71AA3-2F65-4E78-80B3-82D834FBADE3</string>
 				<key>Keywords</key>
 				<array>
 					<string>シェル</string>
@@ -109,9 +249,9 @@ fi</string>
 					<string>UNIX</string>
 				</array>
 				<key>OutputUUID</key>
-				<string>AF4A939F-509E-42CD-A82E-8EEBA45CA015</string>
+				<string>3BCA5B4C-2CFA-4C47-ABC2-70F5EF9DB610</string>
 				<key>UUID</key>
-				<string>A0AB89F8-6D8E-4E6D-9BB2-2CFCF638A004</string>
+				<string>B1C0C6A4-E0E5-440A-B51C-C97570D500F3</string>
 				<key>UnlocalizedApplications</key>
 				<array>
 					<string>Automator</string>
@@ -184,10 +324,12 @@ fi</string>
 						<string>4</string>
 					</dict>
 				</dict>
+				<key>conversionLabel</key>
+				<integer>0</integer>
 				<key>isViewVisible</key>
 				<integer>1</integer>
 				<key>location</key>
-				<string>366.500000:634.000000</string>
+				<string>563.500000:409.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Run Shell Script.action/Contents/Resources/Base.lproj/main.nib</string>
 			</dict>
@@ -196,7 +338,15 @@ fi</string>
 		</dict>
 	</array>
 	<key>connectors</key>
-	<dict/>
+	<dict>
+		<key>2D64286D-2EB8-4DA2-B42A-ED760E6EC800</key>
+		<dict>
+			<key>from</key>
+			<string>07F0E58A-BBE1-4023-B99D-7C530075C958 - 07F0E58A-BBE1-4023-B99D-7C530075C958</string>
+			<key>to</key>
+			<string>B1C0C6A4-E0E5-440A-B51C-C97570D500F3 - B1C0C6A4-E0E5-440A-B51C-C97570D500F3</string>
+		</dict>
+	</dict>
 	<key>workflowMetaData</key>
 	<dict>
 		<key>applicationBundleID</key>
@@ -213,7 +363,7 @@ fi</string>
 			<string>/System/Library/CoreServices/Finder.app</string>
 		</array>
 		<key>inputTypeIdentifier</key>
-		<string>com.apple.Automator.fileSystemObject</string>
+		<string>com.apple.Automator.fileSystemObject.image</string>
 		<key>outputTypeIdentifier</key>
 		<string>com.apple.Automator.nothing</string>
 		<key>presentationMode</key>
@@ -225,13 +375,13 @@ fi</string>
 		<key>serviceApplicationPath</key>
 		<string>/System/Library/CoreServices/Finder.app</string>
 		<key>serviceInputTypeIdentifier</key>
-		<string>com.apple.Automator.fileSystemObject</string>
+		<string>com.apple.Automator.fileSystemObject.image</string>
 		<key>serviceOutputTypeIdentifier</key>
 		<string>com.apple.Automator.nothing</string>
 		<key>serviceProcessesInput</key>
 		<integer>0</integer>
 		<key>systemImageName</key>
-		<string>NSTouchBarDocuments</string>
+		<string>NSTouchBarControlStripScreenshot</string>
 		<key>useAutomaticInputType</key>
 		<integer>0</integer>
 		<key>workflowTypeIdentifier</key>

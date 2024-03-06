@@ -59,26 +59,11 @@
 				<key>ActionParameters</key>
 				<dict>
 					<key>COMMAND_STRING</key>
-					<string>#!/bin/zsh
-
-# 引数が存在するかチェック
-if [ $# -eq 0 ]; then
-#  exit 1
-fi
-
-# 指定されたパス
-path=$1
-
-# パスがフォルダかファイルかを判断
-if [ -d "$path" ]; then
-  /usr/bin/open "$path" -a terminal
-elif [ -f "$path" ]; then
-  /usr/bin/open "$(/usr/bin/dirname "$path")" -a terminal
-fi</string>
+					<string>/usr/local/bin/mpg321 /Users/Shared/sound/hotaru.mp3</string>
 					<key>CheckedForUserDefaultShell</key>
 					<true/>
 					<key>inputMethod</key>
-					<integer>1</integer>
+					<integer>0</integer>
 					<key>shell</key>
 					<string>/bin/zsh</string>
 					<key>source</key>
@@ -99,7 +84,7 @@ fi</string>
 				<key>Class Name</key>
 				<string>RunShellScriptAction</string>
 				<key>InputUUID</key>
-				<string>5E505934-7CB4-4D25-896F-AD83C6CB708B</string>
+				<string>BEF345B0-AF40-48CF-A0A3-657BB7DE4AB8</string>
 				<key>Keywords</key>
 				<array>
 					<string>シェル</string>
@@ -109,9 +94,9 @@ fi</string>
 					<string>UNIX</string>
 				</array>
 				<key>OutputUUID</key>
-				<string>AF4A939F-509E-42CD-A82E-8EEBA45CA015</string>
+				<string>FA43C7FC-923E-4549-8592-19B108BE2B8D</string>
 				<key>UUID</key>
-				<string>A0AB89F8-6D8E-4E6D-9BB2-2CFCF638A004</string>
+				<string>EAD51453-5412-48D5-93A7-684E92134D2D</string>
 				<key>UnlocalizedApplications</key>
 				<array>
 					<string>Automator</string>
@@ -187,7 +172,7 @@ fi</string>
 				<key>isViewVisible</key>
 				<integer>1</integer>
 				<key>location</key>
-				<string>366.500000:634.000000</string>
+				<string>366.500000:361.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Run Shell Script.action/Contents/Resources/Base.lproj/main.nib</string>
 			</dict>
@@ -199,39 +184,26 @@ fi</string>
 	<dict/>
 	<key>workflowMetaData</key>
 	<dict>
-		<key>applicationBundleID</key>
-		<string>com.apple.finder</string>
 		<key>applicationBundleIDsByPath</key>
-		<dict>
-			<key>/System/Library/CoreServices/Finder.app</key>
-			<string>com.apple.finder</string>
-		</dict>
-		<key>applicationPath</key>
-		<string>/System/Library/CoreServices/Finder.app</string>
+		<dict/>
 		<key>applicationPaths</key>
-		<array>
-			<string>/System/Library/CoreServices/Finder.app</string>
-		</array>
+		<array/>
 		<key>inputTypeIdentifier</key>
-		<string>com.apple.Automator.fileSystemObject</string>
+		<string>com.apple.Automator.nothing</string>
 		<key>outputTypeIdentifier</key>
 		<string>com.apple.Automator.nothing</string>
 		<key>presentationMode</key>
-		<integer>15</integer>
+		<integer>11</integer>
 		<key>processesInput</key>
 		<integer>0</integer>
-		<key>serviceApplicationBundleID</key>
-		<string>com.apple.finder</string>
-		<key>serviceApplicationPath</key>
-		<string>/System/Library/CoreServices/Finder.app</string>
 		<key>serviceInputTypeIdentifier</key>
-		<string>com.apple.Automator.fileSystemObject</string>
+		<string>com.apple.Automator.nothing</string>
 		<key>serviceOutputTypeIdentifier</key>
 		<string>com.apple.Automator.nothing</string>
 		<key>serviceProcessesInput</key>
 		<integer>0</integer>
 		<key>systemImageName</key>
-		<string>NSTouchBarDocuments</string>
+		<string>NSTouchBarAlarm</string>
 		<key>useAutomaticInputType</key>
 		<integer>0</integer>
 		<key>workflowTypeIdentifier</key>
